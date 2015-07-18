@@ -14,6 +14,20 @@ GameSystem::GameSystem(const char *windowName, const char * backgroundPath) //co
 	bgRect.w = 800;
 	bgRect.h = 600;
 	
+
+	//player texture definition:
+	player = IMG_LoadTexture(renderer, "dan.png");
+
+	//dimensions:
+	playerRect.x = 400;
+	playerRect.y = 300;
+	playerRect.h = 100;
+	playerRect.w = 90;
+
+	//cropping
+	playerCrop.w = 35;
+	playerCrop.h = 50;
+
 	//to help manage the game loop
 	quit = false; //define everything in the constructor!!!
 }
@@ -36,7 +50,7 @@ void GameSystem::gameLoop()
 		SDL_RenderClear(renderer);
 
 		SDL_RenderCopy(renderer, bg, 0, &bgRect); //draws the bg image
-		
+		SDL_RenderCopy(renderer, player, &playerCrop, &playerRect); //draw the player sprite
 		SDL_RenderPresent(renderer);
 
 		if (mainEvent->type == SDL_QUIT)
