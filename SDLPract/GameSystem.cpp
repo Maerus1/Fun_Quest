@@ -30,6 +30,8 @@ GameSystem::GameSystem(const char *windowName, const char * backgroundPath) //co
 
 	//to help manage the game loop
 	quit = false; //define everything in the constructor!!!
+	xPos = 0;
+	yPos = 0; //saves the x and y position for the player and edits it on keypress
 }
 
 
@@ -48,12 +50,38 @@ void GameSystem::gameLoop()
 	{
 		SDL_PollEvent(mainEvent);
 		SDL_RenderClear(renderer);
+		//scan for movement...
 
+		playerMovement();
 		SDL_RenderCopy(renderer, bg, 0, &bgRect); //draws the bg image
 		SDL_RenderCopy(renderer, player, &playerCrop, &playerRect); //draw the player sprite
 		SDL_RenderPresent(renderer);
 
 		if (mainEvent->type == SDL_QUIT)
 			quit = true;
+	}
+}
+
+void GameSystem::renderBackground()
+{
+
+}
+
+void GameSystem::playerMovement()
+{
+
+	if (mainEvent->key.keysym.sym == SDLK_LEFT)
+		playerRect.x -= 5;		
+	if (mainEvent->key.keysym.sym == SDLK_UP)
+		playerRect.y -= 5;	
+	if (mainEvent->key.keysym.sym == SDLK_RIGHT)
+		playerRect.x += 5;
+	if (mainEvent->key.keysym.sym == SDLK_DOWN)
+		playerRect.y += 5;
+	if (mainEvent->type == SDL_KEYUP)
+	{
+		std::cout << "derp" << std::endl; //this function doesn't work right
+		playerRect.x = playerRect.x;
+		playerRect.y = playerRect.y;
 	}
 }

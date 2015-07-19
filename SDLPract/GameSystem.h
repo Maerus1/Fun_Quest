@@ -2,6 +2,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include <string>
+#include <iostream>
 class GameSystem
 {
 public:
@@ -11,6 +12,7 @@ public:
 	void gameLoop();
 
 	void renderBackground();
+	void playerMovement();
 
 private:
 	SDL_Window * window;
@@ -23,5 +25,7 @@ private:
 	SDL_Rect playerRect; //define the size of player
 	SDL_Rect playerCrop; //to crop the sprite sheet
 	bool quit;
+	int xPos;
+	int yPos;
 };
 

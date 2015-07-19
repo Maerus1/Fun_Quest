@@ -1,4 +1,4 @@
-﻿Build started 18/07/2015 7:41:39 PM.
+﻿Build started 19/07/2015 11:26:44 AM.
      1>Project "Q:\visualstudio2013\Projects\SDLPract\SDLPract\SDLPract.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          Q:\Program_Files\VS13\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GameSystem.cpp
@@ -11,4 +11,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.69
+Time Elapsed 00:00:00.72
